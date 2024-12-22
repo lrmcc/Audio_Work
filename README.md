@@ -15,6 +15,15 @@ requirements.txt:
 A simple text file listing package names and versions.
 Use pip install -r requirements.txt to recreate the environment.
 
+Dev env:
+# Best practice, use an environment rather than install in the base env
+conda create -n my-env
+conda activate my-env
+# If you want to install from conda-forge
+conda config --env --add channels conda-forge
+# The actual install command
+conda install numpy
+
 Audio Data: The writeframes method in the create_wav_file function expects a bytes object containing the audio data. You'll need to generate this data, typically using a library like NumPy or by reading from another audio source.
 Error Handling: Consider adding error handling mechanisms to your code to catch potential exceptions like wave.Error or IOError.
 Advanced Features: For more complex audio operations, you might want to explore libraries like scipy or pydub, which offer additional functionalities like audio editing, effects, and analysis.
